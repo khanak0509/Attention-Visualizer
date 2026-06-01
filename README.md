@@ -270,5 +270,3 @@ ACL 2019.
 ```
 
 ---
-
-*Built while going deep on transformer interpretability: bert-base-uncased for analysis, SST-2 fine-tuned BERT for ablation. Everything in the notebook is meant to be rerun top to bottom and checked against your own eyes.*
