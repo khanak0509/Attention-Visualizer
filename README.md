@@ -245,7 +245,7 @@ cd backend && uvicorn server:app --reload --port 8000
 cd visualizer && flutter run
 ```
 
-**GitHub notebook tip:** If Colab saves tqdm widget outputs, GitHub can't render the `.ipynb`. Run `python3 scripts/clean_notebook_for_github.py Visualizer.ipynb` before pushing.
+# If Colab saves tqdm widget outputs, GitHub can't render the `.ipynb`. Run `python3 scripts/clean_notebook_for_github.py Visualizer.ipynb` before pushing.
 
 ---
 
