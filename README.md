@@ -10,9 +10,7 @@ It reproduces findings from four published NLP papers in a Jupyter notebook. The
 
 
 
-[![Flutter app demo — click to open full video](demo/demo.gif)](https://github.com/khanak0509/Attention-Visualizer/blob/main/demo/Attention.mp4)
-
-**[Watch full demo video (MP4, ~1 min)](https://github.com/khanak0509/Attention-Visualizer/blob/main/demo/Attention.mp4)**
+<video src="https://github.com/khanak0509/Attention-Visualizer/raw/main/demo/Attention.mp4" controls width="100%"></video>
 
 ## What I Built
 
@@ -218,8 +216,7 @@ Ablation on the base model would be meaningless; no label to measure.
 ```
 Visualizer.ipynb              ← main notebook, run this
 llm_attention_visualizer.ipynb
-demo/demo.gif                 ← README demo preview (animated)
-demo/Attention.mp4            ← full Flutter walkthrough video
+demo/Attention.mp4            ← Flutter app walkthrough (embed in README above)
 output_image/                 ← README figures
 backend/                      ← optional API for the Flutter viewer
 visualizer/                   ← optional UI (least important part)
