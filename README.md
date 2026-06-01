@@ -10,7 +10,8 @@ It reproduces findings from four published NLP papers in a Jupyter notebook. The
 
 
 
-<video src="https://github.com/khanak0509/Attention-Visualizer/raw/main/demo/Attention.mp4" controls width="100%"></video>
+https://github.com/user-attachments/assets/a5c25471-8228-4462-ae92-74349aa37af1
+
 
 ## What I Built
 
