@@ -6,6 +6,12 @@ I built this project to understand what's happening inside BERT, not just use it
 
 It reproduces findings from four published NLP papers in a Jupyter notebook. There's also a small FastAPI backend + Flutter app if you want to poke at results interactively. 
 
+## Demo
+
+Flutter viewer walkthrough (analyze a sentence, heatmaps, taxonomy, ablation, probing):
+
+<video src="demo/Attention.mov" controls width="100%"></video>
+
 ---
 
 ## What I Built
@@ -212,6 +218,7 @@ Ablation on the base model would be meaningless; no label to measure.
 ```
 Visualizer.ipynb              ← main notebook, run this
 llm_attention_visualizer.ipynb
+demo/Attention.mov            ← Flutter app walkthrough video
 output_image/                 ← README figures
 backend/                      ← optional API for the Flutter viewer
 visualizer/                   ← optional UI (least important part)
