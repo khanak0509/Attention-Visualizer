@@ -8,9 +8,11 @@ It reproduces findings from four published NLP papers in a Jupyter notebook. The
 
 ## Demo
 
-Flutter viewer walkthrough (analyze a sentence, heatmaps, taxonomy, ablation, probing):
+https://github.com/khanak0509/Attention-Visualizer/raw/main/demo/Attention.mp4
 
-<video src="demo/Attention.mov" controls width="100%"></video>
+<video src="https://github.com/khanak0509/Attention-Visualizer/raw/main/demo/Attention.mp4" controls width="100%"></video>
+
+If the player is blank, [download or open the demo video here](demo/Attention.mp4).
 
 ---
 
@@ -218,7 +220,7 @@ Ablation on the base model would be meaningless; no label to measure.
 ```
 Visualizer.ipynb              ← main notebook, run this
 llm_attention_visualizer.ipynb
-demo/Attention.mov            ← Flutter app walkthrough video
+demo/Attention.mp4            ← Flutter app walkthrough video (2 MB)
 output_image/                 ← README figures
 backend/                      ← optional API for the Flutter viewer
 visualizer/                   ← optional UI (least important part)
