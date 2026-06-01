@@ -135,28 +135,40 @@ Negative drops are weird and interesting: some heads slightly **hurt** SST-2 acc
 
 This is the stronger experiment. One head at a time barely moves accuracy; removing a whole layer does:
 
-![Layer-wise ablation: full layer removal impact](output_image/layerwise_ablation.png)
+![Layer-wise ablation: full layer removal impact (raw drops)](output_image/layerwise_ablation.png)
 
 ![Layer-wise ablation: σ-based importance classification](output_image/layerwise_sigma.png)
 
+σ thresholds computed from the 12 layer drops (mean = 0.0068, σ = 0.0037):
+
 ```
-Layer  7  →  drop ~1.15%   critical
-Layer  9  →  drop ~1.15%   critical
-Layer 10  →  drop ~1.03%   critical
-Layer  1  →  drop ~0.92%   notable
-Layer  4  →  drop ~0.92%   notable
-Layer  3  →  drop ~0.80%   notable
-Layer  6  →  drop ~0.80%   notable
-Layer 12  →  drop ~0.57%   notable
-Layer  8  →  drop ~0.34%   relatively weak
-Layer  5  →  drop ~0.23%
-Layer  2  →  drop ~0.11%
-Layer 11  →  drop ~0.11%
+Critical  (drop > mean + 1.5σ = 0.0124):  none
+Notable   (drop > mean + 0.5σ = 0.0086):  L1, L4, L7, L9, L10
+Redundant (below notable threshold):      L2, L3, L5, L6, L8, L11, L12
 ```
 
-The thing that stuck with me: **Layer 8 sits between Layers 7 and 9 (the two biggest drops), but Layer 8 itself is middling.** Feels like redundant parallel paths. Neighbors cover similar work; the middle layer matters less.
+Ranked by drop:
 
-Also counterintuitive: **early layers (1, 3, 4, 6) hurt more when fully removed than late layers (11, 12).** I assumed "last layers do classification." Not what I measured here.
+```
+  #1  L7   0.0115  +1.26σ  notable   (below critical line)
+  #2  L9   0.0115  +1.26σ  notable
+  #3  L10  0.0103  +0.95σ  notable
+  #4  L1   0.0092  +0.64σ  notable
+  #5  L4   0.0092  +0.64σ  notable
+  #6  L3   0.0080  +0.33σ  redundant
+  #7  L6   0.0080  +0.33σ  redundant
+  #8  L12  0.0057  -0.28σ  redundant
+  #9  L8   0.0034  -0.90σ  redundant
+ #10  L5   0.0023  -1.20σ  redundant
+ #11  L2   0.0011  -1.51σ  redundant
+ #12  L11  0.0011  -1.51σ  redundant
+```
+
+L7 and L9 have the largest raw drops, but even they stay **below** the critical threshold (red line at mean + 1.5σ). That is the right read: full-layer removal hurts, yet no single layer crosses "critical" by this metric.
+
+The thing that stuck with me: **Layer 8 sits between Layers 7 and 9 (the two biggest drops), but Layer 8 itself is weak (+1.26σ vs -0.90σ).** Feels like redundant parallel paths. Neighbors cover similar work; the middle layer matters less.
+
+Also counterintuitive: **notable layers include early L1 and L4, while late layers L2 and L11 barely move accuracy when removed.** I assumed "last layers do classification." Not what I measured here.
 
 ---
 
