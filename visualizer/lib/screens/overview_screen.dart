@@ -72,7 +72,7 @@ class OverviewScreen extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: StatCard(
-                      label: 'Rel. Critical',
+                      label: 'Critical Heads',
                       value: ablation != null
                           ? '${ablation.relativeCritical}/144'
                           : '—',
@@ -80,8 +80,7 @@ class OverviewScreen extends StatelessWidget {
                           ? '>1σ · cutoff ${ablation.relativeThreshold1Sigma.toStringAsFixed(4)}'
                           : null,
                       detail: ablation != null
-                          ? 'notable ${ablation.notableHeads}/144 · '
-                              'μ ${ablation.meanDrop.toStringAsFixed(4)} · '
+                          ? 'μ ${ablation.meanDrop.toStringAsFixed(4)} · '
                               'σ ${ablation.stdDrop.toStringAsFixed(4)}'
                           : null,
                       accentColor: AppColors.accent3,
@@ -115,7 +114,7 @@ class OverviewScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Top heads by SST-2 drop (relative, not redundant)',
+                      'Top heads by SST-2 drop',
                       style: interText(10, color: AppColors.textSecondary),
                     ),
                     const SizedBox(height: 6),

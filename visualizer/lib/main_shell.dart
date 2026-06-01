@@ -261,12 +261,6 @@ class _MainShellState extends State<MainShell> {
                 'Enter a sentence and tap Analyze',
                 style: interText(16, weight: FontWeight.w500),
               ),
-              const SizedBox(height: 8),
-              Text(
-                'Connects to backend at ${ApiService.baseUrl}',
-                style: monoText(12, color: AppColors.textSecondary),
-                textAlign: TextAlign.center,
-              ),
             ],
           ),
         ),
